@@ -1,11 +1,34 @@
 # import sys
 # sys.stdin=open("input.txt", "r")
 
-# 이취코 p.323 문자열 압축
+# 이취코 p.323 문자열 압축 답코드
+def solution(s):
+    answer = len(s)
+    for step in range(1, len(s) // 2 + 1):
+        compressed = ""
+        prev = s[0:step]
+        count = 1
+        for j in range(step, len(s), step):
+            if prev == s[j: j + step]:
+                count += 1
+            else:
+                compressed += str(count) + prev if count >= 2 else prev
+                prev = s[j:j + step]
+                count = 1
+        compressed += str(count) + prev if count >= 2 else prev
+        answer = min(answer, len(compressed))
+    return answer
+
+a = "apple"
+print(a[3:100])
+print(len(a[3:100]))
+
+'''
+# 이취코 p.323 문자열 압축 내코드 -> 결국 안됨
 def solution(s):
     length = len(s)
-    result = []
-    for i in range(2, len(s) // 2 + 1):
+    for i in range(1, len(s) // 2 + 1):
+        result = []
         start = 0
         end = i
         temp = []
@@ -15,6 +38,7 @@ def solution(s):
                 num += 1
                 start = start + i
                 end = end + i
+                print(start, end)
             if num > 1:
                 temp.append(str(num))
                 temp.append(s[start:end])
@@ -28,7 +52,6 @@ def solution(s):
 
 print(solution("aabbaccc"))
 
-'''
 # 이취코 p.322 문자열 재정렬 답코드
 data = input()
 result = []
