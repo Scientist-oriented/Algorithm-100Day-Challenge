@@ -1,3 +1,7 @@
-a  = [1,2,3]
-ab = a[:1]
-print(ab)
+from itertools import groupby
+
+a = ['A', 'A', 'B', 'B', 'B', 'C', 'D', 'A']
+
+maxCandy = 0
+for val, group in groupby(a):
+    print(val, list(group))
