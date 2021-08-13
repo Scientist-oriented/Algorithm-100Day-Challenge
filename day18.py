@@ -2,26 +2,42 @@
 import sys
 sys.stdin=open("input.txt", "r")
 
+# 수리공 항승 좌표압축
 # 수리공 항승
 
 n, l = map(int, input().split())
 holes = list(map(int, input().split()))
-
-pipe = [False] * 1001
-
-for hole in holes:
-    pipe[hole] = True
+holes.sort()
 
 cnt = 0
-i = 0
-while i < 1001:
-    if pipe[i] == True:
+cover = 0
+for hole in holes:
+    if hole > cover:
+        cover = hole + l - 1
         cnt += 1
-        i += l
-    else:
-        i += 1
-
 print(cnt)
+    
+
+# # 수리공 항승
+
+# n, l = map(int, input().split())
+# holes = list(map(int, input().split()))
+
+# pipe = [False] * 1001
+
+# for hole in holes:
+#     pipe[hole] = True
+
+# cnt = 0
+# i = 0
+# while i < 1001:
+#     if pipe[i] == True:
+#         cnt += 1
+#         i += l
+#     else:
+#         i += 1
+
+# print(cnt)
 
 
 
