@@ -1,43 +1,40 @@
-import sys
-sys.stdin=open("input.txt", "r", encoding='UTF8')
+# def isPossibleMeeting(meeting1, meeting2):
+#     if meeting1[0] < meeting2[0]:
+#         if meeting1[1] < meeting2[0]:
+#             return True
+#         else:
+#             return False
+#     elif meeting1[0] > meeting2[0]:
+#         if meeting2[1] < meeting1[0]:
+#             return True
+#         else:
+#             return False
+#     else:
+#         return False
 
-def isPossibleMeeting(meeting1, meeting2):
-    if meeting1[0] < meeting2[0]:
-        if meeting1[1] < meeting2[0]:
-            return True
-        else:
-            return False
-    elif meeting1[0] > meeting2[0]:
-        if meeting2[1] < meeting1[0]:
-            return True
-        else:
-            return False
-    else:
-        return False
+# def getMeetingLength(meeting):
+#     return meeting[1] - meeting[0]
 
-def getMeetingLength(meeting):
-    return meeting[1] - meeting[0]
+# n = int(input())
 
-n = int(input())
+# meetings = []
+# for _ in range(n):
+#     meeting = list(map(int, input().split()))
+#     meetings.append(meeting)
 
-meetings = []
-for _ in range(n):
-    meeting = list(map(int, input().split()))
-    meetings.append(meeting)
+# meetings.sort(key=lambda x : (x[1], x[0]))
 
-meetings.sort(key=lambda x : (x[1], x[0]))
+# result = [meetings[0]]
 
-result = [meetings[0]]
+# for i in range(1, n):
+#     if isPossibleMeeting(result[-1], meetings[i]):
+#         result.append(meetings[i])
+#     else:
+#         if getMeetingLength(meetings[i]) < getMeetingLength(result[-1]):
+#             result.pop()
+#             result.append(meetings[i])
 
-for i in range(1, n):
-    if isPossibleMeeting(result[-1], meetings[i]):
-        result.append(meetings[i])
-    else:
-        if getMeetingLength(meetings[i]) < getMeetingLength(result[-1]):
-            result.pop()
-            result.append(meetings[i])
-
-print(result)
+# print(result)
 
 
 # triNums = []
