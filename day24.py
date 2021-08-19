@@ -1,18 +1,53 @@
 import sys
 sys.stdin=open("input.txt", "r", encoding='UTF8')
 
-a, b, v = map(int, input().split())
+from itertools import permutations, combinations, groupby
 
-climbPerDay = a - b
+word = list(input().upper())
+word.sort()
+cnt = 0
+result =""
+for value, group in groupby(word):
+    length = len(list(group))
+    if length > cnt:
+        result = value
+        cnt = length
+    elif length == cnt:
+        result = "?"
 
-day = (v - a) // climbPerDay
+print(result)
 
-if (v - a) % (a - b) == 0:
-    day += 1
-else:
-    day += 2
+# from itertools import combinations
+# heights = []
 
-print(day)
+# for _ in range(9):
+#     heights.append(int(input()))
+
+# for combi in combinations(heights, 7):
+#     if sum(combi) == 100:
+#         result = list(combi)
+#         break
+
+# result.sort()
+
+# for height in result:
+#     print(height)
+
+
+########################여기서 부터 수업 문제######################
+
+# a, b, v = map(int, input().split())
+
+# climbPerDay = a - b
+
+# day = (v - a) // climbPerDay
+
+# if (v - a) % (a - b) == 0:
+#     day += 1
+# else:
+#     day += 2
+
+# print(day)
 
 
 
