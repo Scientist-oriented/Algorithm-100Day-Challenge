@@ -1,3 +1,76 @@
+1
+ABBABB
+
+3
+AAA
+AA
+AB
+
+3
+ABAB
+AABB
+ABBA
+
+3
+AABBA
+AABBABBA
+AAA
+
+3
+ABAB
+AABB
+ABBA
+
+3
+ABBBBA
+AA
+AB
+
+1
+ABBABB
+
+3
+AAA
+AA
+AB
+
+3
+ABAB
+AABB
+ABBA
+
+5 15
+2 8
+2 10
+2 12
+2 10
+2 5
+
+7
+2 4
+11 4
+15 8
+4 6
+5 3
+8 10
+13 6
+
+4
+3 5 2 7
+
+(((()(()()))(())()))(()())
+
+()(((()())(())()))(())
+
+3 4
+ohhenrie
+charlie
+baesangwook
+obama
+baesangwook
+ohhenrie
+clinton
+
 8
 4
 3
