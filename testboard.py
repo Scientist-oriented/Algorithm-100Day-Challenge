@@ -1,5 +1,7 @@
-a = "DOG"
-b = "DOL"
+from itertools import combinations
 
-a1 = filter(lambda x: x not in b, a)
-print(list(a1))
+arr = ["a", "a", "z", "z"]
+
+for word in combinations(arr,4):
+    print(word)
+
