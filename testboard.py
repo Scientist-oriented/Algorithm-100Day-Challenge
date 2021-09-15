@@ -1,7 +1,4 @@
-from itertools import combinations
+board = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
-arr = ["a", "a", "z", "z"]
-
-for word in combinations(arr,4):
-    print(word)
-
+board2 = list(map(list, zip(*board)))
+print(board2)
