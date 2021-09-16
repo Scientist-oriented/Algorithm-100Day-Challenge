@@ -1,4 +1,4 @@
-board = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+a = [1, 2, 3, 4, 5]
 
-board2 = list(map(list, zip(*board)))
-print(board2)
+if (a[i] > 100 for i in range(5)):
+    print("Heir")
