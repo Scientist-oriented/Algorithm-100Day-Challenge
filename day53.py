@@ -1,7 +1,88 @@
 import sys
 sys.stdin=open("input.txt", "r")
 
+# 뱀
+from collections import deque
+
+N = int(input())
+K = int(input())
+board = [[0 for _ in range(N)] for _ in range(N)]
+for _ in range(K):
+    r, c = map(int, input().split())
+    board[r][c] = 2
+
+L = int(input())
+moves = []
+for _ in range(L):
+    time, dir = input().split()
+    moves.append((int(time), dir))
+
+snake = deque((0, 0))
+'''
+오른쪽 0
+위쪽 1
+왼쪽 2
+아래쪽 3
+'''
+def changeDirection(now, turn):
+    if turn == "L":
+        return now + 1 if now != 3 else 0
+    else:
+        return now - 1 if now != 0 else 3
+
+def move(snake: deque, direction):
+    headR, headC = snake[-1]
+    if direction == 0:
+        if headC + 1 < N:
+            snake.append((headR, headC + 1))
+            if board[headR][headC + 1] == 2:
+                board[headR][headC + 1] = 0
+                return True
+            else:
+                snake.popleft()
+                return True
+        else:
+            return False
+    elif direction == 1:
+        if headR - 1 > -1:
+            snake.append((headR - 1, headC))
+            if board[headR - 1][headC] == 2:
+                board[headR - 1][headC] = 0
+                return True
+            else:
+                snake.popleft()
+                return True
+        else:
+            return False
+    elif direction == 2:
+        if headC - 1 > -1:
+            snake.append((headR, headC - 1))
+            if board[headR][headC - 1] == 2:
+                board[headR][headC - 1] = 0
+                return True
+            else:
+                snake.popleft()
+                return True
+        else:
+            return False
+    else:
+        if headR + 1 < N:
+            snake.append((headR + 1, headC))
+            if board[headR + 1][headC] == 2:
+                board[headR + 1][headC] = 0
+                return True
+            else:
+                snake.popleft()
+                return True
+        else:
+            return False
+    
+        
+
+
+
 # 구슬 탈출 2
+'''
 N, M = map(int, input().split())
 board = [list(input()) for _ in range(N)]
 visited = [[False for _ in range(M)] for _ in range(N)]
@@ -120,3 +201,4 @@ def dfs(red, blue, numOfTries):
 visited[red[0]][red[1]] = True
 dfs(red, blue, 0)
 print(result if result < 11 else -1)
+'''
