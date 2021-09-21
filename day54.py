@@ -154,7 +154,7 @@ def dfs(board, tries):
     ans = max(getHighestOnBoard(rightBoard), ans)
     dfs(rightBoard, tries + 1)
 
-N = int(input())
+N, M = map(int, input().split())
 board = [list(map(int, input().split())) for _ in range(N)]
 ans = 0
 dfs(board, 1)
