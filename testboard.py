@@ -1,4 +1,3 @@
-if [[], []]:
-    print("True")
-else:
-    print("False")
+a = "ABC"
+b = "BC"
+print(b in a)
